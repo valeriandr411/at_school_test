@@ -11,14 +11,18 @@ public class Task {
     private String alias;
     private String name;
     private String pipeline;
+    private String branch;
+    private String repository;
 
     protected Task() {
     }
 
-    public Task(String alias, String name, String pipeline) {
+    public Task(String alias, String name, String pipeline, String branch, String repository) {
         this.alias = alias;
         this.name = name;
         this.pipeline = pipeline;
+        this.branch = branch;
+        this.repository = repository;
     }
 
     public long getId() {
@@ -33,6 +37,10 @@ public class Task {
         this.alias = alias;
     }
 
+    public void setBranch(String branch) {
+        this.branch = branch;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -41,6 +49,9 @@ public class Task {
         this.pipeline = pipeline;
     }
 
+    public void setRepository(String repository) {
+        this.repository = repository;
+    }
 
     public String getAlias() {
         return alias;
@@ -54,12 +65,21 @@ public class Task {
         return pipeline;
     }
 
+    public String getBranch() {
+        return branch;
+    }
+
+    public String getRepository() {
+        return repository;
+    }
 
     @Override
     public String toString() {
         return "[id = " + id +
                 ", alias = " + alias +
                 ", name = " + name +
-                ", pipeline = " + pipeline + "]";
+                ", pipeline = " + pipeline +
+                ", branch = " + branch +
+                ", repository = " + repository + "]";
     }
 }
